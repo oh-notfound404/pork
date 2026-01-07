@@ -1,0 +1,15 @@
+{
+  "name": "shareboost-autumn",
+  "version": "1.0.0",
+  "description": "Share Boost frontend with backend proxy",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  }
+}
