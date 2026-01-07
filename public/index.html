@@ -52,20 +52,6 @@ body {
   50% { margin-left: 60px }
   100% { margin-left: 0 }
 }
-
-.progress-wrap {
-  margin-top: 1rem;
-  background: #292524;
-  border-radius: 999px;
-  overflow: hidden;
-  height: 10px;
-}
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #f97316, #c2410c);
-  transition: width .4s ease;
-}
 </style>
 </head>
 
@@ -101,15 +87,6 @@ body {
   </button>
 </form>
 
-<div id="progressBox" class="hidden">
-  <div class="text-sm mt-2 text-orange-300" id="progressText">
-    Sharing 0 / 0 🍂
-  </div>
-  <div class="progress-wrap">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
-</div>
-
 <div id="result" class="text-center mt-3"></div>
 </main>
 </div>
@@ -131,9 +108,6 @@ setInterval(() => {
 
 const form = document.getElementById("shareForm");
 const btn = document.getElementById("startBtn");
-const progressBox = document.getElementById("progressBox");
-const progressBar = document.getElementById("progressBar");
-const progressText = document.getElementById("progressText");
 const result = document.getElementById("result");
 
 form.addEventListener("submit", async e => {
@@ -152,9 +126,6 @@ form.addEventListener("submit", async e => {
   btn.disabled = true;
   btn.textContent = "🚀 Boosting...";
   result.innerHTML = "";
-  progressBox.classList.remove("hidden");
-  progressBar.style.width = "0%";
-  progressText.textContent = `Sharing 0 / ${count} 🍂`;
 
   try {
     const params = new URLSearchParams({ cookie, link, count, delay });
@@ -165,15 +136,12 @@ form.addEventListener("submit", async e => {
       throw new Error(data.message || "Boost failed");
     }
 
-    progressBar.style.width = "100%";
-    progressText.textContent = `Sharing ${data.shared} / ${count} 🍂`;
-
     result.innerHTML = `
       <div class="bg-green-900/30 border border-green-700 p-3 rounded">
-        ✅ Shared: <b>${data.shared}</b><br>
-        ⏱ ${data.responseTime}<br>
-        </div>
+        ✅ Successfully <b>${data.shared}</b> shared
+      </div>
     `;
+
   } catch (err) {
     showError(err.message);
   } finally {
