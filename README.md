@@ -14,5 +14,3 @@ Frontend is **one HTML file** (HTML + CSS + JS), backend uses **Express** to saf
 - 🚀 Production-ready
 
 ---
-
-## 📂 Project Structure
