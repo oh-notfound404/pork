@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Share Boost • Autumn</title>
 
-<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
@@ -36,7 +35,6 @@ body {
   overflow-x: hidden;
 }
 
-/* 🍂 Falling Leaves */
 .leaf {
   position: fixed;
   top: -10%;
@@ -55,7 +53,6 @@ body {
   100% { margin-left: 0 }
 }
 
-/* 🍁 Progress Bar */
 .progress-wrap {
   margin-top: 1rem;
   background: #292524;
@@ -120,7 +117,6 @@ body {
 <script>
 lucide.createIcons();
 
-/* 🍂 Leaves */
 const icons = ["🍁","🍂","🍃"];
 setInterval(() => {
   const leaf = document.createElement("div");
@@ -133,7 +129,6 @@ setInterval(() => {
   setTimeout(() => leaf.remove(), 15000);
 }, 350);
 
-/* 🍁 Share Boost Logic */
 const form = document.getElementById("shareForm");
 const btn = document.getElementById("startBtn");
 const progressBox = document.getElementById("progressBox");
