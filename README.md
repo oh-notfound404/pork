@@ -1,7 +1,7 @@
 # 🍁 ShareBoost – Autumn Edition
 
 A single-page Share Boost web app with a Node.js backend proxy.  
-Frontend is **one HTML file** (HTML + CSS + JS), backend uses **Express** to safely proxy requests to the Ioark API.
+Frontend is **one HTML file** (HTML + CSS + JS), backend uses **Express** to safely proxy requests to the Yasis API.
 
 ---
 
