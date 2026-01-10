@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutorial • Get Facebook Cookie</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: { poppins: ['Poppins', 'sans-serif'] },
+      colors: {
+        autumn: '#C2410C',
+        autumnDark: '#9A3412',
+        bgDark: '#1C1917',
+        cardDark: '#292524'
+      },
+      boxShadow: {
+        leaf: '0 0 18px rgba(249,115,22,.35)'
+      }
+    }
+  }
+}
+</script>
+
+<style>
+body {
+  font-family: Poppins;
+  overflow-x: hidden;
+}
+
+.leaf {
+  position: fixed;
+  top: -10%;
+  font-size: 22px;
+  pointer-events: none;
+  animation: fall linear infinite, sway ease-in-out infinite;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  to { transform: translateY(120vh) rotate(360deg); }
+}
+@keyframes sway {
+  0% { margin-left: 0 }
+  50% { margin-left: 60px }
+  100% { margin-left: 0 }
+}
+</style>
+</head>
+
+<body class="bg-bgDark text-gray-100">
+
+<div class="max-w-md mx-auto min-h-screen pb-16 relative z-10">
+
+<header class="p-4 border-b border-orange-900 sticky top-0 bg-bgDark z-40 flex items-center gap-3">
+  <a href="/" class="text-orange-400 flex items-center gap-2">
+    <i data-lucide="arrow-left"></i>
+    Back
+  </a>
+  <h1 class="text-lg font-semibold text-orange-400">🍁 Get Facebook Cookie</h1>
+</header>
+
+<main class="p-4 space-y-4">
+
+<div class="bg-cardDark border border-orange-800 rounded-xl p-4 shadow-leaf">
+  <h2 class="text-lg font-semibold text-orange-400 mb-3">
+    📘 Tutorial: Paano kumuha ng Facebook Cookie
+  </h2>
+
+  <ol class="space-y-3 text-sm text-gray-300">
+    <li>
+      <span class="text-orange-400 font-bold">1.</span>
+      Download <b>Kiwi Browser</b><br>
+      <a class="text-orange-400 underline text-xs"
+        href="https://kiwi-browser.en.uptodown.com/android/download">
+        https://kiwi-browser.en.uptodown.com/android/download
+      </a>
+    </li>
+
+    <li>
+      <span class="text-orange-400 font-bold">2.</span>
+      Open at i-download ang extension:<br>
+      <a class="text-orange-400 underline text-xs"
+        href="https://www.mediafire.com/file/nhpfjf09av04czh/biarutilityfbv1.2.0.crx/file?dkey=8fdrbejttlh&r=791">
+        Advanced Cookie Exporter & Token Converter
+      </a>
+    </li>
+
+    <li>
+      <span class="text-orange-400 font-bold">3.</span>
+      Mag log-in muna sa <b>Facebook</b> gamit ang Kiwi Browser.
+    </li>
+
+    <li>
+      <span class="text-orange-400 font-bold">4.</span>
+      I-click ang <b>3 dots</b> sa upper right ➜ piliin ang <b>Extensions</b>.
+    </li>
+
+    <li>
+      <span class="text-orange-400 font-bold">5.</span>
+      Sa Extensions page, pindutin ang<br>
+      <b>[ + from .zip / .crx / .user.js ]</b>
+    </li>
+
+    <li>
+      <span class="text-orange-400 font-bold">6.</span>
+      Piliin ang file na dinownload mo sa step 2.  
+      Automatic itong lalabas sa extensions list.
+    </li>
+
+    <li>
+      <span class="text-orange-400 font-bold">7.</span>
+      Bumalik sa Facebook tab ➜ 3 dots ulit ➜ pinaka-baba makikita ang<br>
+      <b>Advanced Cookie Exporter & Token Converter</b>
+    </li>
+
+    <li>
+      <span class="text-orange-400 font-bold">8.</span>
+      I-click ito ➜ piliin <b>Cookie String (HTTP Header)</b> ➜  
+      <b>Copy String</b><br>
+      <span class="text-green-400">
+        ✔ Yan na ang cookie na gagamitin mo sa Share Boost
+      </span>
+    </li>
+  </ol>
+</div>
+
+<div class="bg-orange-900/20 border border-orange-800 rounded-xl p-4">
+  <h3 class="text-orange-400 font-semibold mb-1">⚠ Paalala</h3>
+  <ul class="list-disc list-inside text-sm text-gray-300 space-y-1">
+    <li>Huwag i-share ang cookie sa iba</li>
+    <li>Gumamit lamang ng legit account</li>
+    <li>Mas safe kung may delay sa share boost</li>
+  </ul>
+</div>
+
+</main>
+</div>
+
+<script>
+lucide.createIcons();
+
+const icons = ["🍁","🍂","🍃"];
+setInterval(() => {
+  const leaf = document.createElement("div");
+  leaf.className = "leaf";
+  leaf.textContent = icons[Math.floor(Math.random()*icons.length)];
+  leaf.style.left = Math.random()*100 + "vw";
+  leaf.style.animationDuration =
+    (6 + Math.random()*6) + "s, " + (3 + Math.random()*4) + "s";
+  document.body.appendChild(leaf);
+  setTimeout(() => leaf.remove(), 15000);
+}, 400);
+</script>
+
+</body>
+</html>
